@@ -8,3 +8,10 @@
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+<hr>
+<h1>TASK 2 - DATABINDING</h1>
+
+<label>Task 2</label>
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{ userName }}</p>
+<button class="btn btn-danger" [disabled]="userName === '' " (click)="onRemoveUserName($event)">Remove name</button>
