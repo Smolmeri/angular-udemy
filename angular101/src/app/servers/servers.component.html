@@ -24,3 +24,17 @@
 <ng-template #noServer>
     <p>No server was created!</p>
 </ng-template>
+
+<hr>
+
+<h1>TASK 3 - Directives</h1>
+
+<button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+
+<p *ngIf="isPressed">Secret Password = heeees</p>
+
+<div 
+    *ngFor="let logItem of log; let i = index;"
+    [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': i >= 5}"
+    >{{ logItem }}</div>

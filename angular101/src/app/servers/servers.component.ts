@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
   allowNewServer = false;
   userNameIsEmpty = false;
   serverCreationStatus = "No server was created!";
@@ -14,7 +13,9 @@ export class ServersComponent implements OnInit {
   userName = "";
   serverCreated = false;
   servers = ['Testserver', 'Testserver 2'];
-
+  isPressed = false;
+  log = [];
+  
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -45,6 +46,8 @@ export class ServersComponent implements OnInit {
     event.target.value = "";
   }
 
-
-
+  onToggleDetails() {
+    this.isPressed = !this.isPressed;
+    this.log.push(new Date());
+  }
 }
